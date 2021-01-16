@@ -20,7 +20,13 @@ class SiteFetcher:
                 'regex_found': self.regex_found}
 
     def get_site(self):
-        r = requests.get(self.site['url'])
+        try:
+            r = requests.get(self.site['url'])
+        except requests.exceptions.ConnectionError:
+            self.status_code = None
+            self.latency = None
+            self.regex_found = None
+            return None
         self.status_code = r.status_code
         self.latency = r.elapsed.total_seconds()
         self.regex_found = self.regex_is_found(r, self.site['regex'])
