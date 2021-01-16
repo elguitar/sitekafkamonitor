@@ -1,0 +1,7 @@
+sites:
+  - url: https://salminen.dev
+    interval: 1  # Seconds
+    regex: 
+  - url: https://aiven.io
+    interval: 3  # Seconds
+    regex: "Performant data pipelines in minutes"

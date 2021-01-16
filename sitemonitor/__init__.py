@@ -67,7 +67,7 @@ if __name__ == "__main__":
                  description="Monitor sites and produce Kafka topic")
     parser.add_argument('-c', '--config',
                         help="Path of the configuration file",
-                        default=(options.root_path / "config.yml"))
+                        default=(options.root_path / "sites.yml"))
 
     args = parser.parse_args()
     sm = SiteMonitor(config=args.config)
