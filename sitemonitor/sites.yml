@@ -1,7 +1,7 @@
 sites:
   - url: https://salminen.dev
     interval: 60 # Seconds
-    regex: 
+    regex: "Open Sourcerer.*Data Wizard"
   - url: https://aiven.io
     interval: 300  # Seconds
     regex: "Performant data pipelines in minutes"

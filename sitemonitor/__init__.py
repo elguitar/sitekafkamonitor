@@ -42,11 +42,10 @@ class SiteMonitor():
            fetches them and pushes them to Kafka"""
         for site in self.sites:
             if self._site_needs_checking(site):
-                print(f"Fetch {site['url']}")
                 sif = siteinfofetcher.SiteFetcher(site)
                 if sif.get_site():
                     print(sif.stats_str())
-                    producer.producer.send(producer.default_topic, sif.to_dict())
+                    producer.producer.send(producer.default_topic, value=sif.to_dict())
                 site['last_check'] = datetime.datetime.now()
         return True
 
