@@ -13,6 +13,12 @@ class SiteFetcher:
     def __str__(self):
         return f"<SiteFetcher site={self.site}>"
 
+    def to_dict(self):
+        return {'site': self.site['url'],
+                'status': self.status_code,
+                'latency': self.latency,
+                'regex_found': self.regex_found}
+
     def get_site(self):
         r = requests.get(self.site['url'])
         self.status_code = r.status_code

@@ -6,6 +6,7 @@ import time
 import yaml
 
 import options
+import producer
 import siteinfofetcher
 
 
@@ -45,6 +46,7 @@ class SiteMonitor():
                 sif = siteinfofetcher.SiteFetcher(site)
                 if sif.get_site():
                     print(sif.stats_str())
+                    producer.producer.send(producer.default_topic, sif.to_dict())
                 site['last_check'] = datetime.datetime.now()
         return True
 
