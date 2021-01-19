@@ -29,7 +29,7 @@ class SiteFetcher:
             return None
         self.status_code = r.status_code
         self.latency = r.elapsed.total_seconds()
-        self.regex_found = self.regex_is_found(r, self.site['regex'])
+        self.regex_found = self.regex_is_found(r, self.site.get('regex', None))
         return self.status_code
 
     def regex_is_found(self, response, regex_str):
