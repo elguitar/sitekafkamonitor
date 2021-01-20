@@ -32,7 +32,8 @@ class SiteFetcher:
         self.regex_found = self.regex_is_found(r, self.site.get('regex', None))
         return self.status_code
 
-    def regex_is_found(self, response, regex_str):
+    @staticmethod
+    def regex_is_found(response, regex_str):
         if not regex_str:
             return None
         return bool(re.search(regex_str, response.text))

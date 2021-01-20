@@ -2,7 +2,7 @@ import json
 
 from kafka import KafkaProducer
 
-import options
+from sitemonitor import options
 
 producer = KafkaProducer(
                bootstrap_servers=f"{options.kafka_host}:{options.kafka_port}",
