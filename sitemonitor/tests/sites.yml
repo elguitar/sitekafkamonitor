@@ -1,0 +1,18 @@
+sites:
+  - url: https://salminen.dev
+    interval: 60  # Seconds
+    regex: "Open Sourcerer.*Data Wizard"
+  - url: https://aiven.io
+    interval: 300  # Seconds
+    regex: "Performant data pipelines in minutes"
+  - url: https://google.com
+    interval: 30
+    regex: "This fails?"
+  - url: https://trepodplus.fi
+    interval: 120
+    regex:  # Maybe works as empty??
+  - url: https://tampereenteekkarit.fi
+    interval: 500
+    regex: Teekkarisauna
+  - url: https://4apis.fi
+    interval: 300
