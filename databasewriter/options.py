@@ -1,4 +1,5 @@
 """Commonly used options for the databasewriter"""
+import pathlib
 import os
 
 from dotenv import load_dotenv
@@ -18,3 +19,4 @@ db_password = os.getenv("DB_PASSWORD")
 table_name = "measurements"
 
 poll_interval = 1 
+root_path = pathlib.Path(__file__).parent
