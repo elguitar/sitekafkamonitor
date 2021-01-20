@@ -11,6 +11,8 @@ make installdeps
 
 ## Usage
 
+For now, the project does not include a `Dockerfile` or anything like that. The `Makefile` makes it a little easier to run common tasks. 
+
 ### The monitor
 
 ```shell
