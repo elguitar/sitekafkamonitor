@@ -10,6 +10,7 @@ class KafkaToDB:
 
     def __init__(self):
         """Constuctor method"""
+        print("Initializing KafkaToDB")
         self.consumer = consumer.consumer
         self.poll_interval = options.poll_interval
 
@@ -47,6 +48,7 @@ class KafkaToDB:
         """Run a loop which checks the Kafka topic for new stuff and
         then preprocesses it and stores to postgres"""
         dbclient().create_measurements_table()
+        print("Initialized successfully!")
         while True:
             response = self.consumer.poll()
             records = self._record_from_response(response)

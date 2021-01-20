@@ -22,6 +22,7 @@ class SiteMonitor():
         """Initialize the object
 
         Read config and initialize sites"""
+        print("Initializing SiteMonitor")
         self._config = self.read_config(config)
         self.sites = self._init_sites()
 
@@ -84,6 +85,7 @@ class SiteMonitor():
         """
         conf_file = pathlib.Path(config)
         contents = conf_file.read_text(encoding='utf-8')
+        print("Config read successfully!")
         return yaml.safe_load(contents)
 
     def run_loop(self):
@@ -107,4 +109,5 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     sm = SiteMonitor(config=args.config)
+    print("Initialized successfully!")
     sm.run_loop()
