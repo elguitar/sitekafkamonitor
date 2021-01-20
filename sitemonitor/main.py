@@ -5,9 +5,9 @@ import pathlib
 import time
 import yaml
 
-from sitemonitor import options
-from sitemonitor.producer import producer, default_topic
-from sitemonitor.siteinfofetcher import SiteFetcher
+import options
+from producer import producer, default_topic
+from siteinfofetcher import SiteFetcher
 
 
 class SiteMonitor():
